@@ -4,19 +4,25 @@
 
 <!DOCTYPE HTML>
 <html>
+<!--Name: Ashok Sasitharan-->
+<!--Student Number: 100745484-->
+<!--Date: November 17 2020-->
+<!--NETD3202 Lab 4-->
 <head>
-    <title>Appraise</title>
+    <title>Appraise Your Textbook!</title>
     <link rel="stylesheet" href="~/css/site.css" type="text/css" />
 </head>
 
 <body>
-    <h1>Appraise </h1>
+    <h1>Students4CheapTexts</h1>
+    <!--Nav bar-->
     <ul>
         <li><a href="~/Home/Index">Home</a></li>
         <li><a class="active" href="~/Home/Appraise">Appraise</a></li>
 
     </ul>
 
+    <!--Start of form-->
     <form action="~/Home/Appraise" method="POST">
         <label for="title">Textbook Title:</label>
         <input type="text" id="make" name="title" placeholder="">
@@ -28,21 +34,17 @@
         <input type="text" id="version" name="version" placeholder="">
         <br />
         <label for="originalPrice">Original Purchase Price:</label>
-        <input type="text" id="originalPrice" name="originalPrice" placeholder="">
+        <input type="text" id="purchasePrice" name="purchasePrice" placeholder="">
         <br />
         <label for="condition">Condition:</label>
         <select name="condition" id="condition">
             <option value="likeNew">Like New</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
+            <option value="good">Good</option>
+            <option value="bad">Bad</option>
         </select>
         <br />
 
-
-
         <input type="submit" value="Appraise">
-
-    </form>
+    </form> <!--End of form-->
 </body>
 </html>
