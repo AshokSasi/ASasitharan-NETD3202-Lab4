@@ -24,7 +24,7 @@ namespace ASasitharan_NETD3202_Lab4.Models
         }
 
         //parameterized constructor
-        public book(string title, int isbn, double version, double purchasePrice, string condition)
+        public book(string title, Int64 isbn, double version, double purchasePrice, string condition)
         {
             this.title = title;
             this.isbn = isbn;
@@ -38,23 +38,27 @@ namespace ASasitharan_NETD3202_Lab4.Models
         {
             if(condition.Equals("likeNew"))
             {
-                return (origPrice / 2);
+                return Math.Round((origPrice / 2),2);
             }
             else if(condition.Equals("good"))
             {
-                return (origPrice / 3);
+                return Math.Round((origPrice / 3),2);
             }
             else
             {
-                return (origPrice / 4);
+                return Math.Round((origPrice / 4),2);
             }
             
         }
 
-        //overrided ToString that displays the price of the book and details
+        
+
+        //overrided ToString that displays the price of the book
         public override string ToString()
         {
             return "Your textbook: " + this.title + ", Version: " + this.version + " was appraised at: $" + calculateValue(this.purchasePrice,this.condition);
         }
     }
+
+  
 }

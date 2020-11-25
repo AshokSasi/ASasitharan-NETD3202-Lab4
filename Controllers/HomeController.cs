@@ -10,7 +10,8 @@ namespace ASasitharan_NETD3202_Lab4.Controllers
     public class HomeController : Controller
     {
         //create new list of book
-        List<book> bookList = new List<book>();
+        public static List<book> booklist = new List<book>();
+      
         public IActionResult Index()
         {
             return View();
@@ -23,17 +24,28 @@ namespace ASasitharan_NETD3202_Lab4.Controllers
         [HttpPost]
         public IActionResult Appraise(book textbook)
         {
-            if(ModelState.IsValid)
+            
+            if (ModelState.IsValid)
             {
-                ViewData["Message"] = textbook.ToString();
 
-                
-                    return View("ViewAppraisal", textbook);
+                booklist.Add(new book(textbook.title,textbook.isbn,textbook.version,textbook.purchasePrice,textbook.condition));
+               
+                ViewData["Message"] = textbook.ToString();
+             
+                return View("Appraised");
             }
             else
             {
                 return View("Failure");
             }
+        }
+        //send the book list
+        public IActionResult AppraiseList()
+        {
+            
+           
+          
+            return View(booklist);
         }
     }
 }

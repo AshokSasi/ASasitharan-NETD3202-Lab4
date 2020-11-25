@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ASasitharan_NETD3202_Lab4.Models.book>
 @{
     ViewData["Title"] = "Appraised";
 }
@@ -20,18 +20,20 @@
 
 <body>
 
-    <h1>Students4CheapTexts</h1>
+    <h1>Students4CheapTexts <img src="~/Images/logo.png" width="150" height="100" /></h1>
+
     <!--Nav bar-->
     <ul>
         <li><a href="~/Home/Index">Home</a></li>
         <li><a class="active" href="~/Home/Appraise">Appraise</a></li>
+        <li><a href="~/Home/AppraiseList">View Appraisals</a></li>
 
 
     </ul>
 
     <h3> @ViewData["Message"]</h3>
 
-
+    
 
 </body>
 
